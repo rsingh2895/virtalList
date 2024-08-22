@@ -68,3 +68,19 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+Overview
+This implementation demonstrates how to build a virtualized list in React that dynamically loads data as the user scrolls. The list initially loads 50 items and fetches additional items in chunks of 50 as the user scrolls to the end of the currently visible items. State management is handled using React Context API, and the component ensures accessibility and responsiveness.
+
+Components
+DataContext.js: Manages global state for items, loading, and pagination.
+VirtualizedList.js: Renders the list with virtual scrolling and triggers data fetching as needed.
+CSS: Provides styling for list items and loading indicators.
+
+Testing
+Purpose: Ensure the component behaves as expected and handles edge cases.
+
+Write a basic test for VirtualizedList:
+
+File: src/VirtualizedList.test.js
