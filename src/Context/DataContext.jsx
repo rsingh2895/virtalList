@@ -21,14 +21,14 @@ export const DataProvider = ({ children }) => {
             .then((data) => {
                 const start = (page - 1) * pageSize;
                 const end = start + pageSize;
-                const newItems = data.slice(start, end).map((item) => ({
-                    firstName: item.first_name || 'No First Name',
-                    lastName: item.last_name || 'No Last Name',
+                const newItems = data?.slice(start, end).map((item) => ({
+                    firstName: item?.first_name || 'No First Name',
+                    lastName: item?.last_name || 'No Last Name',
                 }));
 
                 setItems((prevItems) => [...prevItems, ...newItems]);
 
-                if (newItems.length < pageSize) {
+                if (newItems?.length < pageSize) { //optional chaining
                     setHasMore(false); // No more data to load
                 }
 

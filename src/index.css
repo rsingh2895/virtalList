@@ -31,3 +31,10 @@
 .parent{
   overflow-x: hidden !important;
 }
+
+.shimmer{
+  width: 100%;
+  height: 50px;
+  background-color: #cccccc6e;
+  margin-bottom: 10px;
+}

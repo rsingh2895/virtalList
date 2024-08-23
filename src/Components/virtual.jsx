@@ -3,15 +3,14 @@ import { FixedSizeList as List } from 'react-window';
 import { useData } from '../Context/DataContext';
 import '../App.css';
 import Header from './Header';
+import Shimmer from './shimmer';
 
 const Row = ({ index, style, data }) => {
     const item = data.items[index];
-
+    // if items is not present then load Shimmer Ui
     if (!item) {
         return (
-            <div style={style} className="loading-indicator">
-                Loading...
-            </div>
+            <Shimmer key={index} />
         );
     }
 
@@ -39,6 +38,7 @@ const VirtualizedList = () => {
 
     return (
         <>
+
             <Header />
             <List
                 height={500}
